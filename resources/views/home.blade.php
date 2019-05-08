@@ -22,9 +22,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <strong> Contacts </strong>
-                    <i class="pull-right">
-                        <a href="{{route('contacts.create')}}"> Create Contact </a>
-                    </i>
+                    <a href="{{route('contacts.create')}}">
+                        <button type="button" class="btn btn-info">Create Contact</button>
+                    </a>
                 </div>
 
                 <div class="panel-body">
@@ -33,13 +33,12 @@
                             <a href="{{ route('contacts.show',$contact->id)}}">
                                 <strong>{{ucwords($contact->cname)}}</strong>
                             </a>
-                            <i class="pull-right">
                                     @if( $contact->user_id == auth()->user()->id )
                                     <a class="pull-right" href="#" data-toggle="modal" data-target="#deletePost{{ $contact->id }}">
-                                        <i class="fa fa-remove" aria-hidden="true"> Delete </i>
+                                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
                                     </a>
                                     <a class="pull-right" href="{{ route('contacts.edit',$contact->id) }}">
-                                        <i class="fa fa-pencil" aria-hidden="true"> Edit </i>|
+                                        <button type="button" class="btn btn-default btn-sm">Edit</button>    
                                     </a>
                                     <div class="modal fade" id="deletePost{{ $contact->id }}" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
                                         <div class="modal-dialog model-lg" role="document">
@@ -73,7 +72,6 @@
                                         </div>
                                     </div>
                                     @endif
-                            </i>
                         </div>
                     @endforeach
                 </div>

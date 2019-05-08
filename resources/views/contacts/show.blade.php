@@ -11,10 +11,10 @@
                     </a>
                     @if( $contact->user_id == auth()->user()->id )
                     <a class="pull-right" href="#" data-toggle="modal" data-target="#deletePost{{ $contact->id }}">
-                        <i class="fa fa-remove" aria-hidden="true"> Delete </i>
+                        <i class="btn btn-danger btn-sm" aria-hidden="true"> Delete </i>
                     </a>
                     <a class="pull-right" href="{{ route('contacts.edit',$contact->id) }}">
-                        <i class="fa fa-pencil" aria-hidden="true"> Edit </i>|
+                        <i class="btn btn-default btn-sm" aria-hidden="true"> Edit </i>|
                     </a>
                     <div class="modal fade" id="deletePost{{ $contact->id }}" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
                         <div class="modal-dialog model-lg" role="document">
