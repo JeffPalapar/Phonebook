@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Contacts;
 
 use App\Contact;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
@@ -53,7 +52,7 @@ class ContactController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $contacts = DB::table('contacts')->where('cname','like','%'.$search.'%')
+        $contacts = Contact::where('cname','like','%'.$search.'%')
                                          ->orWhere('cnumber','like','%'.$search.'%')->paginate(100);
 
         return view('home')->with('contacts', $contacts);
