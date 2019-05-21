@@ -12,7 +12,7 @@
                 <div class="panel-body">
                     <form method="post" action="{{route('contacts.update', $contact->id)}}">
                     {{ csrf_field() }}
-                    {{ method_field('put') }}
+                    {{ method_field('PUT') }}
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">

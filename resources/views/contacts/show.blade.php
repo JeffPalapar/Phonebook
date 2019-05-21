@@ -32,7 +32,7 @@
                                 <div class="modal-body">
                                     <form method="post" action="{{ route('contacts.destroy',$contact->id) }}">
                                     {{ csrf_field() }}
-                                    <input type="hidden" name="_method" value="DELETE">
+                                    {{ method_field('DELETE') }}
                                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                         <div class="form-group" align="center">
                                             <h4>Are You Sure You Want To Delete
